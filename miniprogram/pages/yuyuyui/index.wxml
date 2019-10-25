@@ -1,0 +1,52 @@
+<!--miniprogram/pages/yuyuyui/index.wxml-->
+<wux-select id="color" />
+<wux-select id="rate" />
+<wux-select id="character" />
+<wux-popup closable visible="{{ showError }}" title="错误" content="{{errMsg}}" bind:close="close1" bind:closed="close1">
+
+</wux-popup>
+<wux-spin nested spinning="{{ spinning }}" tip="Loading...">
+  <view class="page">
+    <wux-button block type="positive" wx:if="{{isManager}}" bind:click="gotoCreate">编辑新卡</wux-button>
+    <view class="page__bd">
+      <wux-cell-group title="筛选条件">
+        <wux-cell title="属性" extra="{{ activeColor }}" bind:click="selectColor"></wux-cell>
+        <wux-cell title="稀有度" extra="{{ activeRate }}" bind:click="selectRate"></wux-cell>
+        <wux-cell title="角色" extra="{{ activeCharacter }}" bind:click="selectCharacter"></wux-cell>
+      </wux-cell-group>
+    </view>
+
+    <scroll-view scroll-y style="height: 800rpx;" bindscrolltolower="lower">
+      <block wx:for="{{cardList}}" wx:key="index">
+        <view style="height:10px"></view>
+        <view class="page__hd">
+          <wux-wing-blank size="default">
+            <wux-card title="{{item.title}}" extra="{{item.rate+'·'+item.color+'·'+item.character}}">
+              <view slot="body">
+                <image src="{{item.beforeImg}}" lazy-load="true" hidden="{{item.open}}" style="width:650rpx;height:366rpx"></image>
+                <image src="{{item.afterImg}}" lazy-load="true" hidden="{{!item.open}}" style="width:650rpx;height:366rpx"></image>
+              </view>
+              <view slot="footer" style="width:100%">
+                <wux-row>
+                  <wux-col span="6">
+                    <view class="placeholder">
+                      {{item.open?'神花后':'神花前'}}
+                      <switch name="switch" bind:change="openCard" data-index="{{index}}" wx:if="{{item.afterImg!=''}}" checked="{{item.open}}" />
+                    </view>
+                  </wux-col>
+                  <wux-col span="6">
+                    <view class="placeholder">
+                      <button type="primary" size="mini" bindtap="gotoEdit" style="float:right" data-id="{{item._id}}"> {{isManager?'编辑':'查看'}} </button>
+                      <button type="primary" size="mini" bindtap="download" style="float:right;margin-right:5px" data-url="{{item.open?item.afterImg:item.beforeImg}}" hidden="{{power}}" data-id="{{item._id}}"> 下载卡面 </button>
+                      <button type="primary" size="mini" class='openSetting' open-type="openSetting" bindopensetting='handleSetting' hidden='{{openSettingBtnHidden}}' style="float:right" hidden="{{!power}}"> 打开授权 </button>
+                    </view>
+                  </wux-col>
+                </wux-row>
+              </view>
+            </wux-card>
+          </wux-wing-blank>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</wux-spin>

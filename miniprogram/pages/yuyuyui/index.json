@@ -1,0 +1,20 @@
+{
+  "usingComponents": {
+    "wux-cell-group": "../../dist/cell-group/index",
+    "wux-cell": "../../dist/cell/index",
+    "wux-select": "../../dist/select/index",
+    "wux-card": "../../dist/card/index",
+    "wux-wing-blank": "../../dist/wing-blank/index",
+    "wux-icon": "../../dist/icon/index",
+    "wux-button": "../../dist/button/index",
+    "wux-upload": "../../dist/upload/index",
+    "wux-row": "../../dist/row/index",
+    "wux-col": "../../dist/col/index",
+    "wux-image": "../../dist/image/index",
+    "wux-input": "../../dist/input/index",
+    "wux-dialog": "../../dist/dialog/index",
+    "wux-switch": "../../dist/switch/index",
+    "wux-spin": "../../dist/spin/index",
+    "wux-popup": "../../dist/popup/index"
+  }
+}
