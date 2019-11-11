@@ -23,8 +23,8 @@
           <wux-wing-blank size="default">
             <wux-card title="{{item.title}}" extra="{{item.rate+'·'+item.color+'·'+item.character}}">
               <view slot="body">
-                <image src="{{item.beforeImg}}" lazy-load="true" hidden="{{item.open}}" style="width:650rpx;height:366rpx"></image>
-                <image src="{{item.afterImg}}" lazy-load="true" hidden="{{!item.open}}" style="width:650rpx;height:366rpx"></image>
+                <image src="{{item.tbefore}}" lazy-load="true" hidden="{{item.open}}" style="width:650rpx;height:366rpx"></image>
+                <image src="{{item.tafter}}" lazy-load="true" hidden="{{!item.open}}" style="width:650rpx;height:366rpx"></image>
               </view>
               <view slot="footer" style="width:100%">
                 <wux-row>

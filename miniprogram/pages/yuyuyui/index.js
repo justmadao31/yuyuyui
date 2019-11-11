@@ -44,6 +44,10 @@ Page({
         value: '2'
       },
       {
+        title: 'MR',
+        value: '2'
+      },
+      {
         title: 'SR',
         value: '3'
       },
@@ -290,6 +294,12 @@ Page({
           vm.data.cardList = []
         }
         // res.data 是一个包含集合中有权限访问的所有记录的数据，不超过 20 条
+
+        res.data.forEach(function(o,i){
+          o.tbefore = o.beforeImg.replace('/yuyuyui/', '/thumbnail/').replace('png','jpg')
+          o.tafter = o.afterImg.replace('/yuyuyui/', '/thumbnail/').replace('png', 'jpg')
+        })
+
         vm.setData({
           cardList: vm.data.cardList.concat(res.data),
           spinning: false

@@ -50,6 +50,10 @@ Page({
         value: '2'
       },
       {
+        title: 'MR',
+        value: '5'
+      },
+      {
         title: 'SR',
         value: '3'
       },

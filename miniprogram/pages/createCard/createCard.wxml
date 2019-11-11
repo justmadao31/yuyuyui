@@ -112,8 +112,8 @@
       <wux-card title="神花前" extra="">
         <view slot="body">
           <image src="{{beforeImg}}" hidden="{{beforeImg==''}}" style="width:650rpx;height:366rpx"></image>
-          <wux-button block type="calm" bind:click="doUpload" data-index="1" wx:if="{{isManager&&beforeImg==''}}">上传</wux-button>
-          <wux-button block type="assertive" bind:click="deleteImg" data-index="1" wx:if="{{isManager&&beforeImg!=''}}">删除</wux-button>
+          <!-- <wux-button block type="calm" bind:click="doUpload" data-index="1" wx:if="{{isManager&&beforeImg==''}}">上传</wux-button>
+          <wux-button block type="assertive" bind:click="deleteImg" data-index="1" wx:if="{{isManager&&beforeImg!=''}}">删除</wux-button> -->
         </view>
         <view slot="footer"></view>
       </wux-card>
@@ -123,8 +123,8 @@
       <wux-card title="神花后" extra="">
         <view slot="body">
           <image src="{{afterImg}}" hidden="{{afterImg==''}}" style="width:650rpx;height:366rpx"></image>
-          <wux-button block type="calm" bind:click="doUpload" data-index="2" wx:if="{{isManager&&afterImg==''}}">上传</wux-button>
-          <wux-button block type="assertive" bind:click="deleteImg" data-index="2" wx:if="{{isManager&&afterImg!=''}}">删除</wux-button>
+          <!-- <wux-button block type="calm" bind:click="doUpload" data-index="2" wx:if="{{isManager&&afterImg==''}}">上传</wux-button>
+          <wux-button block type="assertive" bind:click="deleteImg" data-index="2" wx:if="{{isManager&&afterImg!=''}}">删除</wux-button> -->
         </view>
         <view slot="footer"></view>
       </wux-card>
