@@ -45,7 +45,7 @@ Page({
       },
       {
         title: 'MR',
-        value: '2'
+        value: '5'
       },
       {
         title: 'SR',
